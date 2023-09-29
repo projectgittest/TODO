@@ -34,6 +34,7 @@ public class TODOController {
 
     @GetMapping("/{username}")
     public ResponseEntity<List<TODOItem>>getItem(@PathVariable String username) {
+        System.out.println("Item");
             return ResponseEntity.status(200).body(todoService.getItem(username));
 
     }
