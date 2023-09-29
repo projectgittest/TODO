@@ -20,8 +20,8 @@ public class TODOController {
 
     @PostMapping("create")
     public ResponseEntity<Long>addItem(@RequestBody TODOItem item){
-        System.out.println("Create");
         Long id=todoService.saveItem(item);
+        System.out.println("Create");
         if(id==null)return ResponseEntity.badRequest().body(-1L);
         return ResponseEntity.ok(id);
 }
