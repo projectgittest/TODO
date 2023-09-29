@@ -28,6 +28,7 @@ public class TODOController {
 
     @PatchMapping ("update/{id}")
     public ResponseEntity<String> updateItem(@RequestBody TODOItem item,@PathVariable long id){
+        System.out.println("Update item");
         return todoService.updateItem(id,item)
                 ? ResponseEntity.status(200).body("TODO updated")
                 : ResponseEntity.status(404).body("TODOO not found!");
